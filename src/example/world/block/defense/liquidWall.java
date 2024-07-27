@@ -4,13 +4,13 @@ import mindustry.world.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.type.*;
 
-public class LiquidWall extends Wall {
-    public float liquidMultiplier = 1.5f;
-    public Liquid liquidType = Liquids.water;
+public class liquidWall extends Wall {
+    public float liquidMultiplier = 1.5f; // множитель HP при наличии воды
+    public Liquid liquidType = Liquids.water; // тип жидкости, увеличивающей HP
     
     public LiquidWall(String name) {
         super(name);
-        update = true;
+        update = true; // требуется обновление каждый тик
     }
     
     @Override
@@ -21,8 +21,9 @@ public class LiquidWall extends Wall {
     
     @Override
     public void updateTile() {
-        super.updateTile(){
-        if(liquidCapacity > 0 && liquids.get(liquidType) > 0) {
+        super.updateTile();
+        // если в стене есть вода, увеличить HP
+        if (liquidCapacity > 0 && liquids.get(liquidType) > 0) {
             health = baseHealth * liquidMultiplier;
         } else {
             health = baseHealth;
@@ -32,6 +33,6 @@ public class LiquidWall extends Wall {
     @Override
     public void init() {
         super.init();
-        liquidCapacity = 10f;
+        liquidCapacity = 10f; // ёмкость для воды
     }
 }
