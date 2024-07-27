@@ -7,6 +7,7 @@ import mindustry.content.*;
 import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
+import example.content.*;
 public class ExampleJavaMod extends Mod{
 
     public ExampleJavaMod(){
@@ -15,6 +16,7 @@ public class ExampleJavaMod extends Mod{
     @Override
     public void loadContent(){
         Log.info("Loading some example content.");
+        Tblocks.load;
     }
 
 }
