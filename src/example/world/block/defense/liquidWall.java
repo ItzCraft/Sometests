@@ -21,7 +21,7 @@ public class liquidWall extends Wall {
     
     @Override
     public void updateTile() {
-        super.updateTile(){
+        super.updateTile();
         if (liquidCapacity > 0 && liquids.get(liquidType) > 0) {
             health = baseHealth * liquidMultiplier;
         } else {
