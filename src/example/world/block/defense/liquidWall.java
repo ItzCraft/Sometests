@@ -8,19 +8,19 @@ public class liquidWall extends Wall {
     public float liquidMultiplier = 1.5f;
     public Liquid liquidType = Liquids.water;
     
-    public liquidWall(String name) {
+    public liquidWall(String name){
         super(name);
         update = true;
     }
     
     @Override
-    public void setStats() {
+    public void setStats(){
         super.setStats();
         stats.add(Stat.health, (health * liquidMultiplier), StatUnit.none);
     }
     
     @Override
-    public void updateTile() {
+    public void updateTile(){
         super.updateTile();
         if (liquidCapacity > 0 && liquids.get(liquidType) > 0) {
             health = baseHealth * liquidMultiplier;
@@ -30,7 +30,7 @@ public class liquidWall extends Wall {
     }
     
     @Override
-    public void init() {
+    public void init(){
         super.init();
         liquidCapacity = 10f;
     }
