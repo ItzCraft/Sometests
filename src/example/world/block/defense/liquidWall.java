@@ -1,8 +1,9 @@
 package example.world.block.defense;
 import mindustry.gen.*;
 import mindustry.world.*;
-import mindustry.world.blocks.defense.*;
+import mindustry.world.blocks.defense.Wall;
 import mindustry.type.*;
+import mindustry.world.meta.*;
 
 public class liquidWall extends Wall {
     public float liquidMultiplier = 1.5f;
